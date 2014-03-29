@@ -32,7 +32,7 @@
 	function findUsername($username) {
 		$sites = array();
 		if(findUsernameGoogle($username)) {
-			$sites["google"]=array(
+			$sites[]=array(
 				"name"=>"Google",
 				"description"=>"",
 				"imgURL"=>"http://quickscreen.me/css/chrome.jpg",
@@ -43,7 +43,7 @@
 			
 		}
 		if(findUsernameGodaddy($username)) {
-			$sites["godaddy"]=array(
+			$sites[]=array(
 				"name"=>"Go Daddy",
 				"description"=>"",
 				"imgURL"=>"http://freeasp.net/wp-content/uploads/2014/03/godaddy-reseller.png",
@@ -54,7 +54,7 @@
 			
 		}
 		if(findUsernameMatch($username)) {
-			$sites["match"]=array(
+			$sites[]=array(
 				"name"=>"Match.com",
 				"description"=>"",
 				"imgURL"=>"http://www.letmypeoplego.com/images/location/match_logo.jpg",
@@ -71,7 +71,7 @@
 	function findEMail($email) {
 		$sites = array();
 		if(findEmailBox($email)) {
-			$sites["box"]=array(
+			$sites[]=array(
 				"name"=>"Box",
 				"description"=>"",
 				"imgURL"=>"http://cloudtimes.org/wp-content/uploads/2011/08/box_logo.png",
@@ -82,7 +82,7 @@
 			
 		}
 		if(findEmailEbay($email)) {
-			$sites["ebay"]=array(
+			$sites[]=array(
 				"name"=>"Ebay",
 				"description"=>"",
 				"imgURL"=>"http://techblog.weblineindia.com/wp-content/uploads/2012/09/eBay-Logo-New-300x225.jpg",
@@ -93,7 +93,7 @@
 			
 		}
 		if(findEmailFacebook($email)) {
-			$sites["facebook"]=array(
+			$sites[]=array(
 				"name"=>"Facebook",
 				"description"=>"",
 				"imgURL"=>"https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYuCbsmPLvmpWObmvCFxckWSM7itG2h80chjRXuelSGTIIXvIl",
@@ -104,7 +104,7 @@
 			
 		}
 		if(findEmailFoursquare($email)) {
-			$sites["foursquare"]=array(
+			$sites[]=array(
 				"name"=>"Foursquare",
 				"description"=>"",
 				"imgURL"=>"http://upload.wikimedia.org/wikipedia/commons/5/5b/Foursquare-logo.png",
@@ -115,7 +115,7 @@
 			
 		}
 		if(findEmailLinkedin($email)) {
-			$sites["linkedin"]=array(
+			$sites[]=array(
 				"name"=>"LinkedIn",
 				"description"=>"",
 				"imgURL"=>"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbK22ILwVlu_hipCtEU2rhJ7b9mio_tgTcAaLJVjSUmmrFXrH2hQ",
@@ -126,7 +126,7 @@
 			
 		}
 		if(findEmailMatch($email)) {
-			$sites["match"]=array(
+			$sites[]=array(
 				"name"=>"Match",
 				"description"=>"",
 				"imgURL"=>"http://www.letmypeoplego.com/images/location/match_logo.jpg",
@@ -190,6 +190,9 @@
 
 	function findEmailLinkedin($email) {
 		$data = registerCurl("curl 'https://www.linkedin.com/reg/join-create' -H 'Cookie: bcookie=\"v=2&560cca6f-0bb3-450a-8ab5-f4c832002215\"; bscookie=\"v=1&2013091123392605f91c76-111b-41d0-877c-5d7433ac9668AQH0_DxPcyHCVGnEKx_1pBgJmOZGKWZY\"; __qca=P0-1774545782-1381852161442; visit=\"v=1&M\; _leo_profile=\"\"; X-ATS-Node-0=0; X-ATS-Node-1=0; X-ATS-Node-2=0; _lipt=\"0_Ug0Qv7FkXOSizDNxneHDbvup8kBiPB4dwimQHUw1zRmM_8v-xS5tALaJgwSxztijpE9yy8gSK4O34LrNCgw8JhvNYiOlBQVlF8lq1kCi1Sph-ekvVkAiWL0dA5JvXo-HRYXY4H9cwBVpB6q7KqOdqj0OElBKok_--Y92zkoQdrcKLbyPSniIWvG8zsnJX35e4f0UL-miLVBlehq0R0yu5aNNXgGyFBi_BLkUQJGH05p0AdCE4QFy-3GEEqAoIacFFKIcwD_bjQA_pqXxU96pjlY8EEqKNpLs7SbKoN5_oFfsIMPWa1DxthWaXC3Re5Z_\"; _cb_ls=1; _chartbeat2=Cqj3/YCDdlomD3/oe.1396035957964.1396035957964.1; _chartbeat_uuniq=3; lihc_auth_en=1396066664; JSESSIONID=\"ajax:6415264161769157566\"; lidc=\"b=LB57:g=76:u=1:i=1396066665:t=1396153065:s=3771025559\"; L1e=203e6005; RT=s=1396066672132&r=https%3A%2F%2Fwww.linkedin.com%2Fuas%2Flogin%3Fsession_redirect%3Dhttp%253A%252F%252Fhelp.linkedin.com%252Fapp%252Fhome%252Freauth%252Ftrue; leo_auth_token=\"GST:9VeMhuG45Fh1f3dG2c6VsBuM1Jvu2S6ajG2iP2G-hZhP3XsOdIDVQi:1396066696:9f2784ea19ee6339795ce8ab22daffc71b478cea\"; lang=\"v=2&lang=en-us\"; __utma=23068709.374424338.1396066670.1396066670.1396066670.1; __utmb=23068709.6.10.1396066670; __utmc=23068709; __utmz=23068709.1396066670.1.1.utmcsr=help.linkedin.com|utmccn=(referral)|utmcmd=referral|utmcct=/; __utmv=23068709.guest' -H 'Origin: https://www.linkedin.com' -H 'X-LinkedIn-traceDataContext: X-LI-ORIGIN-UUID=4LEmpEPTXxPQJnTsQysAAA==' -H 'Accept-Language: en-US,en;q=0.8' -H 'X-Requested-With: XMLHttpRequest' -H 'X-IsAJAXForm: 1' -H 'Accept-Encoding: gzip,deflate,sdch' -H 'Connection: keep-alive' -H 'Pragma: no-cache' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36' -H 'Content-Type: application/x-www-form-urlencoded' -H 'Accept: */*' -H 'Cache-Control: no-cache' -H 'Referer: https://www.linkedin.com/reg/join' --data 'isJsEnabled=true&firstName=Matthew&lastName=Bolanos&email=$email&password=asdfasdfasdf&webmailImport=true&trcode=&genie-reg=&mod=&key=&authToken=&authType=&csrfToken=ajax%3A6415264161769157566&sourceAlias=0_0pKtnXJ9l1BopHQS-IqS2t&client_ts=1396066704686&client_r=mbolanos%40smu.edu%3A820433535%3A277140802%3A543929743&client_output=-221072856&client_n=820433535%3A277140802%3A543929743&client_v=1.0.1' --compressed");
+		
+		//var_dump($data);
+		
 		return (strpos($data->errors->fieldErrors->{'email-coldRegistrationForm'},'is already registered') !== false);
 	}
 
@@ -215,8 +218,7 @@
 	
 	echo json_encode($sites);
 	
-	//echo json_encode(findUsername("hotguy"));
-	//echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
+	//findEmail("mbolanos@smu.edu");
         
 ?>
 

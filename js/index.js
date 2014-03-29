@@ -67,7 +67,7 @@ function getResults(event) {
                 $("#resultsList").empty();
                 json = JSON.parse(json);
                 
-                if(Object.keys(json).length === 0){
+                if((json).length === 0){
                     $("#resultsList").append("<h3>No Results Found.</h3>");
                     $("#results").show();
                     $("#loadingIcon").hide();
