@@ -203,7 +203,7 @@
 	/*START OF MAIN
 	************************************************************************/
 	
-	/*$sites = array();
+	$sites = array();
 	
 	foreach($_POST["emails"] as $email) {
 		$sites = array_merge($sites,findEmail($email));
@@ -213,10 +213,10 @@
 		$sites = array_merge($sites,findUsername($username));
 	}
 	
-	echo json_encode($sites);*/
+	echo json_encode($sites);
 	
 	//echo json_encode(findUsername("hotguy"));
-	echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
+	//echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
         
 ?>
 
