@@ -56,30 +56,29 @@ function getResults(event) {
                 $(".email").val("");
                 $(".username").val("");
                 $("#resultsList").empty();
-                console.log(json);
                 json = JSON.parse(json);
-                if(json.length === 0){
+                
+                if(Object.keys(json).length === 0){
                     $("#resultsList").append("<h3>No Results Found.</h3>");
                     $("#results").show();
                     return;
-
                 }
 
                 $.each(json, function( index, value ) {
                     var resultItem = "";
                     var name = value.name;
                     var description = value.description;
-                    var imageLink = value.imageLink;
-                    var webSiteLink = value.webSiteLink;
-                    var emailUsed = value.emailUsed;
-                    var usernameUsed = value.usernameUsed;
+                    var imageLink = value.imgURL;
+                    var webSiteLink = value.link;
+                    var emailUsed = value.email;
+                    var usernameUsed = value.username;
 
                     resultItem = "<li><h3 class='name'>" + name +
                         "</h3><img src='" + imageLink +
                         "' class='companyLogo' alt='Logo' title='Logo'><p class='description'>" +
                         description + "</p><a href='" + webSiteLink +
                         "' class='companyUrl'>Link to " + name + "</a><h4 class='emailUsed'>Email:" + emailUsed + "</h4>";
-                    if(usernameUsed === NULL){
+                    if(usernameUsed !== null){
                         resultItem = resultItem + "<h4 class='usernameUsed'>Username:" + usernameUsed +"</h4>";
                     }
                     resultItem = resultItem + "</li>";
