@@ -18,8 +18,12 @@ h2{
     overflow-y: auto;
     background-color: rgb(254, 255, 245);
     width: 90%;
-    margin-left: 2%;
-    margin-bottom: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 5%;
+    box-sizing: border-box;
 }
 
 .companyLogo{
