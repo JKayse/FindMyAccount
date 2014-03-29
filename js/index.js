@@ -44,7 +44,7 @@ function getResults(event) {
     email = JSON.stringify(emailArray);
     username = JSON.stringify(usernameArray);
     $("body").addClass("clicked");
-    
+
     $.ajax({
             type: "POST",
             //url: "api/CreateEvent",
@@ -57,24 +57,21 @@ function getResults(event) {
                 $(".username").val("");
                 $("#resultsList").empty();
                 json = JSON.parse(json);
-                var results = json.results;
-                if(results.length === 0){
-
+                if(json.length === 0){
                     $("#resultsList").append("<h3>No Results Found.</h3>");
                     $("#results").show();
                     return;
 
                 }
 
-                for(var i =0; i < results.length; i++){
+                $.each(json, function( index, value ) {
                     var resultItem = "";
-                    var result = results[i];
-                    var name = result.name;
-                    var description = result.description;
-                    var imageLink = result.imageLink;
-                    var webSiteLink = result.webSiteLink;
-                    var emailUsed = result.emailUsed;
-                    var usernameUsed = result.usernameUsed;
+                    var name = value.name;
+                    var description = value.description;
+                    var imageLink = value.imageLink;
+                    var webSiteLink = value.webSiteLink;
+                    var emailUsed = value.emailUsed;
+                    var usernameUsed = value.usernameUsed;
 
                     resultItem = "<li><h3 class='name'>" + name +
                         "</h3><img src='" + imageLink +
@@ -87,8 +84,8 @@ function getResults(event) {
                     resultItem = resultItem + "</li>";
                     $("#resultsList").append(resultItem);
                     $("#results").show();
-
-                }
+                  
+                });
 
 
             }

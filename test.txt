@@ -1,0 +1,19 @@
+{
+    "foursquare": {
+        "name": "Foursquare",
+        "description": "",
+        "imgURL": "http://upload.wikimedia.org/wikipedia/commons/5/5b/Foursquare-logo.png",
+        "link": "https://www.foursquare.com/",
+        "email": "mbolanos@smu.edu",
+        "username": null
+    },
+    "company": {
+        "name": "Foursquare",
+        "description": "",
+        "imgURL": "http://upload.wikimedia.org/wikipedia/commons/5/5b/Foursquare-logo.png",
+        "link": "https://www.foursquare.com/",
+        "email": "mbolanos@smu.edu",
+        "username": null
+    }
+
+}
