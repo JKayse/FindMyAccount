@@ -43,6 +43,7 @@ function getResults(event) {
     
     email = (emailArray);
     username = (usernameArray);
+    
     $("body").addClass("clicked");
 
     $.ajax({
@@ -52,7 +53,8 @@ function getResults(event) {
                 emails: email,
                 usernames: username
             },
-            success: function(json){         
+            success: function(json){   
+            	console.log(json);      
                 $(".email").val("");
                 $(".username").val("");
                 $("#resultsList").empty();
