@@ -41,13 +41,13 @@ function getResults(event) {
         
     }
     
-    email = JSON.stringify(emailArray);
-    username = JSON.stringify(usernameArray);
+    email = (emailArray);
+    username = (usernameArray);
     $("body").addClass("clicked");
     
     $.ajax({
             type: "POST",
-            //url: "api/CreateEvent",
+            url: "feed.php",
             data: {
                 emails: email,
                 usernames: username
@@ -56,6 +56,7 @@ function getResults(event) {
                 $(".email").val("");
                 $(".username").val("");
                 $("#resultsList").empty();
+                console.log(json);
                 json = JSON.parse(json);
                 var results = json.results;
                 if(results.length === 0){
