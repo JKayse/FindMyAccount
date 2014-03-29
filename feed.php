@@ -175,7 +175,7 @@
 
 	function findEmailEbay($email) {
 		$data = registerCurl("curl 'https://reg.ebay.com/reg/ajax' --data 'email=$email&countryId=1&mode=5&eId=email'");
-        return (strpos($data,'Your email address is already registered with eBay') !== false);
+        return (strpos($data->content->email,'Your email address is already registered with eBay') !== false);
 	}
 
 	function findEmailFacebook($email) {
@@ -210,7 +210,7 @@
 	}
 	
 	foreach($_POST["usernames"] as $username) {
-		$sites = array_merge($sites,findUsername($$username));
+		$sites = array_merge($sites,findUsername($username));
 	}
 	
 	echo json_encode($sites);
