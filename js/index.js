@@ -45,6 +45,7 @@ function getResults(event) {
     }
     
     if(emailArray.length === 0 && usernameArray.length === 0){
+        $("#loadingIcon").hide();
         alert("Please enter at least one username or email.");
         return;
     }
