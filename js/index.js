@@ -26,6 +26,8 @@ function getResults(event) {
     var emailArray = [];
     var usernameArray = [];
 
+
+
     for(var i = 0; i < emails.size() ; i++){
         if(emails.eq(i).val() !== ""){
             var value = emails.eq(i).val();
@@ -41,6 +43,11 @@ function getResults(event) {
         
     }
     
+    if(emailArray.length === 0 && usernameArray.length === 0){
+        alert("Please enter at least one username or email.");
+        return;
+    }
+
     email = (emailArray);
     username = (usernameArray);
     
@@ -54,9 +61,9 @@ function getResults(event) {
                 usernames: username
             },
             success: function(json){   
+
+                $("#loadingIcon").show();
             	console.log(json);      
-                $(".email").val("");
-                $(".username").val("");
                 $("#resultsList").empty();
                 json = JSON.parse(json);
                 
@@ -66,6 +73,7 @@ function getResults(event) {
                     return;
                 }
 
+
                 $.each(json, function( index, value ) {
                     var resultItem = "";
                     var name = value.name;
@@ -74,18 +82,24 @@ function getResults(event) {
                     var webSiteLink = value.link;
                     var emailUsed = value.email;
                     var usernameUsed = value.username;
+                    console.log(usernameUsed);
 
                     resultItem = "<li><h3 class='name'>" + name +
                         "</h3><img src='" + imageLink +
                         "' class='companyLogo' alt='Logo' title='Logo'><p class='description'>" +
                         description + "</p><a href='" + webSiteLink +
-                        "' class='companyUrl'>Link to " + name + "</a><h4 class='emailUsed'>Email:" + emailUsed + "</h4>";
+                        "' class='companyUrl'>Link to " + name + "</a>";
+                    
+                    if(email !== null){
+                        resultItem = resultItem + "<h4 class='emailUsed'>Email:" + emailUsed + "</h4>";
+                    }
                     if(usernameUsed !== null){
                         resultItem = resultItem + "<h4 class='usernameUsed'>Username:" + usernameUsed +"</h4>";
                     }
                     resultItem = resultItem + "</li>";
                     $("#resultsList").append(resultItem);
                     $("#results").show();
+                    $("#loadingIcon").hide();
                   
                 });
 

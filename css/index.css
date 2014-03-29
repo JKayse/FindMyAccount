@@ -119,3 +119,9 @@ body{
 input {
     font-family: 'Domine', serif;
 }
+
+#loadingIcon{
+    position: absolute;
+    left: 25%;
+    display: none;
+}
