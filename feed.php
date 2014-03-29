@@ -1,6 +1,6 @@
 <?php 
 
-	//GOOGLE
+	error_reporting(0);
 
 	function registerCurl($cmd) {
         exec($cmd,$result);
@@ -205,8 +205,18 @@
 	
 	$sites = array();
 	
+	foreach($_POST["emails"] as $email) {
+		$sites = array_merge($sites,findEmail($email));
+	}
+	
+	foreach($_POST["usernames"] as $username) {
+		$sites = array_merge($sites,findUsername($$username));
+	}
+	
+	echo json_encode($sites);
+	
 	//echo json_encode(findUsername("hotguy"));
-	echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
+	//echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
         
 ?>
 
