@@ -175,7 +175,7 @@
 
 	function findEmailEbay($email) {
 		$data = registerCurl("curl 'https://reg.ebay.com/reg/ajax' --data 'email=$email&countryId=1&mode=5&eId=email'");
-        return (strpos($data,'Your email address is already registered with eBay') !== false);
+        return (strpos($data->content->email,'Your email address is already registered with eBay') !== false);
 	}
 
 	function findEmailFacebook($email) {
@@ -203,20 +203,20 @@
 	/*START OF MAIN
 	************************************************************************/
 	
-	$sites = array();
+	/*$sites = array();
 	
 	foreach($_POST["emails"] as $email) {
 		$sites = array_merge($sites,findEmail($email));
 	}
 	
 	foreach($_POST["usernames"] as $username) {
-		$sites = array_merge($sites,findUsername($$username));
+		$sites = array_merge($sites,findUsername($username));
 	}
 	
-	echo json_encode($sites);
+	echo json_encode($sites);*/
 	
 	//echo json_encode(findUsername("hotguy"));
-	//echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
+	echo json_encode(array_merge(findEmail("mbolanos@smu.edu"),findUsername("hotguy")));
         
 ?>
 
