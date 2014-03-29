@@ -20,7 +20,7 @@ function addMoreUsernameFields() {
 
 function getResults(event) {
     event.preventDefault();
-
+    $("#loadingIcon").show();
     var emails = $(".email");
     var usernames = $(".username");
     var emailArray = [];
@@ -62,7 +62,7 @@ function getResults(event) {
             },
             success: function(json){   
 
-                $("#loadingIcon").show();
+                
             	console.log(json);      
                 $("#resultsList").empty();
                 json = JSON.parse(json);
@@ -70,6 +70,7 @@ function getResults(event) {
                 if(Object.keys(json).length === 0){
                     $("#resultsList").append("<h3>No Results Found.</h3>");
                     $("#results").show();
+                    $("#loadingIcon").hide();
                     return;
                 }
 
