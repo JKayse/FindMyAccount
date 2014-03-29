@@ -93,7 +93,7 @@ function getResults(event) {
                         description + "</p><a href='" + webSiteLink +
                         "' class='companyUrl'>Link to " + name + "</a>";
                     
-                    if(email !== null){
+                    if(emailUsed !== null){
                         resultItem = resultItem + "<h4 class='emailUsed'>Email:" + emailUsed + "</h4>";
                     }
                     if(usernameUsed !== null){
