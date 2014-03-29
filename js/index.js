@@ -21,6 +21,7 @@ function addMoreUsernameFields() {
 function getResults(event) {
     event.preventDefault();
     $("#loadingIcon").show();
+    $("#results").hide();
     var emails = $(".email");
     var usernames = $(".username");
     var emailArray = [];
